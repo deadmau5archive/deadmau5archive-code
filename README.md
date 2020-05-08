@@ -1,7 +1,7 @@
 # deadmau5 archive code
 
 **WARNING  
-THIS CODE IS NOT DOCUMENTED, NOR WAS IS EVER SUPPOSED TO BE RELEASED  
+THIS CODE IS NOT DOCUMENTED, NOR WAS IT EVER SUPPOSED TO BE RELEASED  
 IT IS VERY MESSY  
 PROCEED AT YOUR OWN RISK**
 
@@ -31,14 +31,14 @@ this is designed for a unix system, but should work on windows too.
 
 ### uploader-java-v1
 
-does transcoding and uploading and other stuff for managing the youtube channel.  
+does transcoding (ts to mp4) and uploading and other stuff for managing the youtube channel.  
 it also has a mass download option for old twitch vods 
 
 this was made for twitch
 
 ### uploader-java-v2
 
-also does transcoding and uploading and other stuff for managing the youtube channel.
+also does transcoding (or rather, did, before i switched to just uploading mixer's mp4 file of the stream. but the code is there) and uploading and other stuff for managing the youtube channel.
 
 this was made for mixer and is largely a copy of v1, but with some new stuff and some stuff adjusted
 
