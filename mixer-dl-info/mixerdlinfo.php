@@ -8,9 +8,9 @@ if (php_sapi_name() === 'cli' || (isset($_GET['key']) && $_GET['key'] == $key)) 
 }
 
 
-/*$dbuser = "";
-$dbpass = "";
-$dbhost = "localhost";*/
+$dbuser = "username goes here";
+$dbpass = "password goes here";
+$dbhost = "localhost";
 $dbname = "mixer_save";
 $dbtable = "vods";
 
@@ -31,7 +31,7 @@ if ($isAuth) {
 		$whereChannel = "";
 	}
 	
-	//$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+	$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 	mysqli_select_db($db, $dbname);
 	$res = mysqli_query($db, "SELECT * FROM ".$dbtable.$whereChannel." ORDER BY run DESC");
 	
