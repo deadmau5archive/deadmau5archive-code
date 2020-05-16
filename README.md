@@ -42,3 +42,8 @@ also does transcoding and uploading and other stuff for managing the youtube cha
 
 this was made for mixer and is largely a copy of v1, but with some new stuff and some stuff adjusted
 
+### mixer-chat-to-youtube-srv3
+
+takes a mixer chatlog (source.json) and coverts it to a subtitle file (proprietary youtube srv3 format) you can add to a youtube video as a chat replay
+
+

@@ -1,0 +1,95 @@
+{
+	"base": {
+		"sz": 1,
+		"fo": 1000
+	},
+	"message": {
+		"extends": ["base"],
+		"bo": 200,
+		"bc": "#212C3D",
+		"fc": "#FFFFFF"
+	},
+	"background_hl": {
+		"bc": "#41597A",
+		"bo": 1000
+	},
+	"ascension_base": {
+		"extends": ["base"],
+		"fc": "#212C3D",
+		"fs": 1,
+		"bo": 1000,
+		"b": 1
+	},
+	"system": {
+		"extends": ["message"],
+		"fc": "#AAAAAA"
+	},
+	"message_i": {
+		"extends": ["message"],
+		"i": 1
+	},
+	"user_normal": {
+		"extends": ["message"],
+		"b": 1,
+		"fc": "#37AAD5"
+	},
+	"user_normal_hl": {
+		"extends": ["user_normal", "background_hl"]
+	},
+	"user_owner": {
+		"extends": ["user_normal"],
+		"fc": "#FFFFFF"
+	},
+	"user_owner_hl": {
+		"extends": ["user_owner", "background_hl"]
+	},
+	"user_staff": {
+		"extends": ["user_normal"],
+		"fc": "#ECBF37"
+	},
+	"user_staff_hl": {
+		"extends": ["user_staff", "background_hl"]
+	},
+	"user_founder": {
+		"extends": ["user_normal"],
+		"fc": "#E42D2D"
+	},
+	"user_founder_hl": {
+		"extends": ["user_founder", "background_hl"]
+	},
+	"user_mod": {
+		"extends": ["user_normal"],
+		"fc": "#37ED3B"
+	},
+	"user_mod_hl": {
+		"extends": ["user_mod", "background_hl"]
+	},
+	"user_pro": {
+		"extends": ["user_normal"],
+		"fc": "#E175FF"
+	},
+	"user_pro_hl": {
+		"extends": ["user_pro", "background_hl"]
+	},
+	"message_hl": {
+		"extends": ["message", "background_hl"]
+	},
+	"tag": {
+		"extends": ["message"],
+		"fc": "#0075D5"
+	},
+	"sticker_msg": {
+		"extends": ["message_hl"]
+	},
+	"sticker_name": {
+		"extends": ["message_hl"],
+		"b": 1
+	},
+	"skill_msg": {
+		"extends": ["message_hl"]
+	},
+	"skill_name": {
+		"extends": ["message_hl"],
+		"i": 1
+	}
+}
