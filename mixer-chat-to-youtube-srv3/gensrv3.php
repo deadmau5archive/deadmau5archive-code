@@ -83,7 +83,7 @@ foreach ($allvids as $vid) {
 				$data = $msg['content']['data'];
 				
 				$role = "normal";
-				$isSub = true;
+				$isSub = false;
 				
 				if (isset($data['user_roles'])) {
 					$roles = $data['user_roles'];
