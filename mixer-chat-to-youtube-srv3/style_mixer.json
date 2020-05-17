@@ -24,9 +24,29 @@
 		"extends": ["message"],
 		"fc": "#AAAAAA"
 	},
+	"system_i": {
+		"extends": ["system"],
+		"i": 1
+	},
+	"system_b": {
+		"extends": ["system"],
+		"b": 1
+	},
 	"message_i": {
 		"extends": ["message"],
 		"i": 1
+	},
+	"message_i_hl": {
+		"extends": ["message_hl"],
+		"i": 1
+	},
+	"subbadge": {
+		"extends": ["message"],
+		"fc": "#FDCF3F"
+	},
+	"subbadge_hl": {
+		"extends": ["message_hl"],
+		"fc": "#FDCF3F"
 	},
 	"user_normal": {
 		"extends": ["message"],
@@ -78,6 +98,9 @@
 		"extends": ["message"],
 		"fc": "#0075D5"
 	},
+	"tag_hl": {
+		"extends": ["tag","background_hl"]
+	},
 	"sticker_msg": {
 		"extends": ["message_hl"]
 	},
@@ -91,5 +114,22 @@
 	"skill_name": {
 		"extends": ["message_hl"],
 		"i": 1
+	},
+	"poll": {
+		"extends": ["message"]
+	},
+	"poll_i": {
+		"extends": ["poll"],
+		"i": 1
+	},
+	"poll_b": {
+		"extends": ["poll"],
+		"b": 1
+	},
+	"poll_hl": {
+		"extends": ["poll"],
+		"bc": "#FFFFFF",
+		"fc": "#000000",
+		"bo": 1000
 	}
 }
