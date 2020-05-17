@@ -1,7 +1,7 @@
 <?php
 
-//this file will be dumed by java-uploader-v2:
-// (you don't absolutely need it though, you essentially just need a list with all vod contentIds)
+//this file will be dumed by uploader-java-v2:
+// (you don't absolutely need it though, you essentially just need a list with all vod contentIds, or just a list of files you want to process)
 $allvids = json_decode(file_get_contents("info.txt"), true); 
 
 foreach ($allvids as $vid) {
@@ -13,7 +13,7 @@ foreach ($allvids as $vid) {
 	
 	echo "\n".$contentId."\n";
 
-	$chatfile = "/path/to/chatarchive/".$contentId."/chat.txt"; //loads in the source.json file of the respective vod
+	$chatfile = "/path/to/mixer-dl/dl/deadmau5/meta/chatarchive/".$contentId."/chat.txt"; //loads in the source.json file of the respective vod (downloaded with mixer-dl)
 	$stylesfile = "style_mixer.json";
 	$mixerlevelssfile = "levels.json"; //get this file from https://mixer.com/api/v1/ascension/levels
 	$streamerTimezone = "America/Toronto";

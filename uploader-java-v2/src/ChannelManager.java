@@ -1,4 +1,6 @@
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +13,10 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.InputStreamContent;
 import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.model.Caption;
+import com.google.api.services.youtube.model.CaptionSnippet;
 import com.google.api.services.youtube.model.ChannelListResponse;
 import com.google.api.services.youtube.model.Playlist;
 import com.google.api.services.youtube.model.PlaylistListResponse;
@@ -35,14 +40,47 @@ public class ChannelManager {
 		
 		//changeTwitchVideosVisibility("private");
 		
-		String newPlaylistVisibility = "unlisted";
+		/*String newPlaylistVisibility = "unlisted";
 		changeTwitchPlaylistsVisibility(newPlaylistVisibility);
 		changeMixerPlaylistsVisibility(newPlaylistVisibility);
 		updatePlaylist(TWITCH_LTF, newPlaylistVisibility, "All twitch streams (latest to first)");
 		updatePlaylist(TWITCH_FTL, newPlaylistVisibility, "All twitch streams (first to latest)");
 		updatePlaylist(MIXER_FTL, newPlaylistVisibility, "Mixer streams");
-		
-		
+		*/
+	
+		addCaptions("2Rje6Xl-uyM", "F:/mixer/experiments/subtitles/gen/srv3poll.xml", "en", "Chat replay 69420");
+	}
+	
+	static void addCaptions(String videoId, String filePath, String lang, String name) {
+		try {
+			YouTube youtubeService = YtTest.getYouTubeService(YtTest.credIndex);
+	        
+	        // Define the Caption object, which will be uploaded as the request body.
+	        Caption caption = new Caption();
+	        
+	        // Add the snippet object property to the Caption object.
+	        CaptionSnippet snippet = new CaptionSnippet();
+	        snippet.setIsDraft(false);
+	        snippet.setLanguage(lang);
+	        snippet.setName(name);
+	        snippet.setVideoId(videoId);
+	        caption.setSnippet(snippet);
+
+	        // The maximum file size for this operation is 100MB.
+	        File mediaFile = new File(filePath);
+	        InputStreamContent mediaContent =
+	            new InputStreamContent("text/xml",
+	                new BufferedInputStream(new FileInputStream(mediaFile)));
+	        mediaContent.setLength(mediaFile.length());
+
+	        // Define and execute the API request
+	        YouTube.Captions.Insert request = youtubeService.captions()
+	            .insert("snippet", caption, mediaContent);
+	        Caption response = request.execute();
+	        System.out.println(response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	static void listChannelInfo(int credIndex) {
